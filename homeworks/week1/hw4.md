@@ -22,21 +22,21 @@ Github 放 Git repository 的地方
 2. **` git init `** 在工作資料夾下建立一個檔案庫。
 3. **`ls -al`** 多了一個 .git 的檔案，我們可以開始對文件做版本管理了。
 
-![git init](https://imgur.com/ng3bkRy)
+![git init](https://imgur.com/ng3bkRy.png)
 
 4. 編輯完笑話後，存擋。
 5. **`git status`** 檢視目前 git 狀態會發現檔案是在 untracked 的狀態下，也就是還沒進到 staging area 暫存區。
 
-![status_untracked](https://imgur.com/o6hXChR)
+![status_untracked](https://imgur.com/o6hXChR.png)
 
 6. **`git add`** 把檔案加入版本控制, 檔案已存入 staging area 暫存區
 
-![staging area](https://imgur.com/tkd2z8C)
+![staging area](https://imgur.com/tkd2z8C.png)
 
 7. **`git commit -m`** 輸入對這個版本的簡單描述，可以記錄一下這版改了什麼
 8. **`git log`** 查看版本進度，可以看到完整版本號碼，檔案已放在 localrepo
 
-![localexpo](https://imgur.com/0WHielk)
+![localexpo](https://imgur.com/0WHielk.png)
 
 到這邊為止，都是在自己的電腦這端操作，如果菜哥要把檔案分享給多人協作，可以丟到遠端 GitHub 的檔案庫去，步驟如下：
 
