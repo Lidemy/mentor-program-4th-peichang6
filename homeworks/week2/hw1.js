@@ -1,5 +1,7 @@
 function printStars(n) {
-  
+  for (var i = 1; i <= n; i += 1) {
+ 	console.log('*')
+  }
 }
 
-printStars(5);
+printStars(7);
