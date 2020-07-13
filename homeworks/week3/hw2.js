@@ -23,10 +23,6 @@ function solve(input) {
   }
 }
 
-rl.on('close', () => {
-  solve(lines);
-});
-
 function digitsCount(n) {
   if (n === 0) return 1; {
     let result = 0;
@@ -55,3 +51,7 @@ function isNarcissistic(n) {
   }
   return false;
 }
+
+rl.on('close', () => {
+  solve(lines);
+});
