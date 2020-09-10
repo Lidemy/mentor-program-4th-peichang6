@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>活動報名表單</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<form class="apply-form">
+	      <div class="apply-form__title">新拖延運動報名表單</div>
+	      <div class="apply-form__event">
+	        <div>活動日期：2020/12/10 ~ 2020/12/11</div>
+	        <div>活動地點：台北市大安區新生南路二段1號</div>
+	      </div>
+	      <p>* 必填</p>
+	      <section class="section__questions">
+	      	<div class="question">
+	      	  <div class="question__item">暱稱</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input">
+	        	<input type="text" placeholder="您的回答" />
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">電子郵件</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input">
+	        	<input type="text" placeholder="您的電子郵件" />
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">手機號碼</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input">
+	        	<input type="text" placeholder="您的手機號碼" />
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">報名類型</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input">
+	        	<label>
+	              <input type="radio" name="type" id="r1" />
+	              躺在床上用想像力實作
+	              </label>
+	              <label>
+	              <input type="radio" name="type" id="r2" />
+	              趴在地上滑手機找現成的
+	            </label>
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">怎麼知道這個活動的？</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input">
+	        	<input type="text" placeholder="您的回答" />
+	        </div>
+	        <div class="question">
+	        	<div class="question__others">
+	      	      <div class="question__item">其他</div>
+	      	      <div class="suggestion">對活動的一些建議</div>
+	      	    </div>
+	        </div>
+	        <div class="question__input">
+	        	<input type="text" placeholder="您的回答" />
+	        </div>
+	        <input class="apply-form__submit" type="submit" value="送出">
+	        <div class="apply-form__note">請勿透過表單送出您的密碼。</div>
+	      </section>
+	    </form>    
+	</div>
+	<footer>© 2020 © Copyright. All rights Reserved.</footer>
+</body>
+</html>

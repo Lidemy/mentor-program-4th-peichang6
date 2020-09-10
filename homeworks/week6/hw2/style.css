@@ -1,0 +1,92 @@
+body {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.wrapper {
+	max-width: 645px;
+    background: white; 
+    margin: 10% auto; 
+    padding:60px 32px;
+    box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+    border-top: solid 8px #fad312;
+}
+
+
+
+.apply-form__title {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.apply-form__event {
+	margin-top: 35px;
+	line-height: 1.6em;
+	font-size: 14px;
+}
+
+.wrapper p {
+	margin-top: 22px;
+	font-size: 16px;
+	color: #e74149;
+
+}
+
+.question {
+	display: flex;
+	margin-top: 50px;
+}
+
+.question__item{
+	font-size: 20px;
+
+}
+.question__required {
+	color: #e74149;
+	margin-left: 6px;
+}
+
+.question__input {
+	margin-top: 22px;
+}
+
+.question__input input[type=text] {
+	border: solid 1px #d0d0d0;
+	font-size: 16px; 
+	padding: 5px;
+	color: #afafaf;
+}
+
+
+.question__input label {
+	display: block;
+	font-size: 14px;
+	margin-top: 12px;
+}
+
+.suggestion {
+	font-size: 14px;
+	margin-top: 12px;
+}
+
+.apply-form__submit {
+    padding: 12px 32px;
+	background:#fad312;
+	border-radius: 3px;
+	margin-top: 58px;
+	border: 0px;
+	font-size: 15px;
+}
+
+.apply-form__note {
+	color: black;
+	font-size: 14px;
+	margin-top: 21px;
+}
+
+footer {
+	background: black;
+	color:#999999;
+	font-size: 13px;
+	text-align: center;
+	padding: 24px 12px;
+}
