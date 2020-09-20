@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>活動報名表單</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<form class="apply-form">
+	      <div class="apply-form__title">新拖延運動報名表單</div>
+	      <div class="apply-form__event">
+	        <div>活動日期：2020/12/10 ~ 2020/12/11</div>
+	        <div>活動地點：台北市大安區新生南路二段1號</div>
+	      </div>
+	      <p>* 必填</p>
+	      <section class="section__questions">
+	      	<div class="question">
+	      	  <div class="question__item">暱稱</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input required hide-error">
+	        	<input type="text" name="nickname" placeholder="您的回答" />
+	        	<div class="question__error">請輸入暱稱</div>
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">電子郵件</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input required hide-error">
+	        	<input type="text" name="email" placeholder="您的電子郵件" />
+	        	<div class="question__error">請輸入電子郵件</div>
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">手機號碼</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input required hide-error">
+	        	<input type="text" name="phone" placeholder="您的手機號碼" />
+	        	<div class="question__error">請輸入手機號碼</div>
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">報名類型</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input required hide-error">
+	        	<label>
+	              <input type="radio" name="type1" id="r1" />
+	              躺在床上用想像力實作
+	              </label>
+	              <label>
+	              <input type="radio" name="type2" id="r2" />
+	              趴在地上滑手機找現成的
+	            </label>
+	            <div class="question__error">請輸入報名類型</div>
+	        </div>
+	        <div class="question">
+	      	  <div class="question__item">怎麼知道這個活動的？</div>
+	      	  <div class="question__required">*</div>
+	        </div>
+	        <div class="question__input required hide-error">
+	        	<input type="text" name="motivation" placeholder="您的回答" />
+	        	<div class="question__error">請輸入您的回答</div>
+	        </div>
+	        <div class="question">
+	        	<div class="question__others">
+	      	      <div class="question__item">其他</div>
+	      	      <div class="suggestion">對活動的一些建議</div>
+	      	    </div>
+	        </div>
+	        <div class="question__input">
+	        	<input type="text" placeholder="您的回答" />
+	        </div>
+	        <input class="apply-form__submit" type="submit" value="送出">
+	        <div class="apply-form__note">請勿透過表單送出您的密碼。</div>
+	      </section>
+	    </form>    
+	</div>
+	<footer>© 2020 © Copyright. All rights Reserved.</footer>
+	<script>
+		document.querySelector('form')
+		.addEventListener('submit', function(e) {
+			e.preventDefault()
+			let hasError = false
+			let values = {}
+			
+
+			const elements = document.querySelectorAll('.required')
+			for(element of elements) {
+			  const radios = element.querySelectorAll('input[type=radio]')
+			  const input = element.querySelector('input[type=text]')
+			  let isValid = true
+			  if (input) {
+				values[input.name] = input.value
+				if (!input.value) {
+				  isValid =false
+				}
+			  } else if (radios.length) {
+                isValid = [...radios].some(radio => radio.checked)
+                if (isValid) {
+                	let r = element.querySelector('input[type=radio]:checked')
+                	values[r.name] = r.value
+                } 
+			  } else {
+			  	continue
+			  }
+				
+			  if (!isValid) {
+			    element.classList.remove('hide-error')
+				hasError = true
+			  } else {
+			    element.classList.add('hide-error')
+			  }
+			}
+
+			if (!hasError) {
+			  alert(JSON.stringify(values))
+			}
+
+		})
+	</script>
+</body>
+</html>
