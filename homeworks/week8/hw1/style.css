@@ -1,0 +1,277 @@
+* {
+	box-sizing: border-box;
+}
+
+.navbar {
+	box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+
+.navbar .wrapper {
+	display: flex;
+	height: 84px;
+	background: white;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 20px;
+}
+
+.wrapper {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 12px;
+}
+
+.navbar__site-name {
+	color: #489846;
+	font-size: 36px;
+    font-family: Questrial;
+}
+
+.navbar__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	font-size: 16px;
+}
+
+.navbar__list li {
+	margin-left: 12px;
+	border-radius: 8px;
+	transition: background 0.5s;
+}
+
+.navbar__list li.active {
+	background: #ff7286;
+}
+
+.navbar__list li:hover {
+	background: #ff7286;
+}
+
+.navbar__list li.active a {
+	color: white;
+}
+
+.navbar__list li:hover a {
+	color: white;
+}
+
+
+.navbar__list li a {
+	display: block;
+	color: black;
+	text-decoration: none;
+	padding: 12px 24px;
+}
+
+.section {
+	text-align: center;
+	margin-top: 80px;
+}
+
+
+.section__title {
+	display: inline-block;
+	font-size: 36px;
+	border-left: solid 15px #a3dea2;
+	padding-left: 16px;
+	margin-bottom: 36px;
+}
+
+.luckydraw__result{
+	max-width: 750px;
+	position: relative;
+	color: #292222;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 40px 20px 24px 20px;
+}
+
+.luckydraw__result-content {
+	font-size: 36px;
+	font-weight: bold;
+	color: white;
+
+}
+
+.luckydraw__result-btn {
+	max-width: 300px;
+	font-size: 20px;
+	color: white;
+	background: #e62a45;
+	text-align: center;
+	border-radius: 8px;
+	margin: 55px auto;
+	padding: 16px 0px;
+	cursor: pointer;
+}
+
+.section__luckydraw {
+	position: relative;
+	height:  500px;
+	background: url(./img/games-bn.png) center/cover no-repeat;
+}
+
+.section__luckydraw.first-prize {
+	background-image: url(./img/first.jpg);
+}
+
+.section__luckydraw.second-prize {
+	background-image: url(./img/second.jpg);
+}
+
+.section__luckydraw.third-prize {
+	background-image: url(./img/third.jpg);
+}
+
+.section__luckydraw.none-prize {
+	background:black;
+}
+
+.section__luckydraw:after {
+	content: '';
+	position: absolute;
+	background:rgba(0, 0, 0, 0);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+
+.luckydraw {
+	background: white;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	transform: translate(-50%, -50%);
+	max-width: 500px;
+	text-align: center;
+	padding: 40px 20px 24px 20px;
+	border-radius: 16px;	
+}
+
+.luckydraw__title {
+	font-size: 20px;
+	color: #5ec1b6;
+	font-weight: bold;
+}
+
+.luckydraw__content {
+	display: flex;
+	align-items: flex-start;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	padding: 20px 0px;
+}
+
+.luckydraw__content-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #322929;
+}	
+
+.luckydraw__content-details {
+	font-size: 16px;
+	color: #322929;
+	margin-left: 20px;
+	flex: 1;
+	text-align: left;
+	line-height: 1.5em;
+}
+
+.luckydraw__btn {
+	width: 80%;
+	font-size: 20px;
+	color: white;
+	background: #e62a45;
+	text-align: center;
+	border-radius: 8px;
+	margin: 24px auto 0px auto;
+	padding: 16px 0px;
+	cursor: pointer;
+}
+
+footer {
+	margin-top: 0px;
+}
+
+.footer__copyright {
+	background:#35564b;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	padding: 12px;
+}
+
+.footer__top {
+	background: #e8efee;
+	padding: 32px;
+	color:#484848;
+}
+
+.footer__top .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__info {
+	margin-right: 16px;
+}
+
+.footer__info div + div {
+	margin-top: 10px;
+}
+
+.footer__site .name {
+	font-size: 36px;
+	color:#489846;
+}
+
+@media(max-width: 768px) {
+	.navbar .wrapper {
+		height: 106px;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.navbar__site-name {
+		margin-top: 10px;
+	}
+
+	.navbar__list {
+		width: 100%
+	}
+
+	.navbar__list li {
+		flex: 1;
+		margin-left: 0;
+		border-radius: 0;
+		text-align: center;
+	}
+
+	.footer__top .wrapper {
+		flex-direction: column-reverse;
+	}
+
+	.footer__info {
+		margin-right: 0px;
+		margin-top: 16px;
+	}
+
+	.luckydraw {
+		transform: none;
+		top: 0;
+		left: 0;
+		border-radius: 0;
+	}
+
+}
+
+.hide {
+	display: none;
+}
