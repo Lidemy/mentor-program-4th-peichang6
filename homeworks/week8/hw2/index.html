@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Twitch Top Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar__site-name">Twitch Top Games</div>
+    <ul class="navbar__list">
+
+    </ul>    
+  </header>
+  <div class="bg">
+    <div class="wrapper">
+      <h1>Loading...</h1>
+      <h2> Top 20 popular live streams sorted by current viewers</h2>
+      <section class="streams">
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const request = new XMLHttpRequest();
+    request.open('GET', 'https://api.twitch.tv/kraken/games/top?limit=5', true);
+    request.setRequestHeader('Client-ID', '4t0oc4ozzmq7a4j3zwrpqjira9nrz1')
+    request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        const games = JSON.parse(request.response).top;
+        for(let game of games) {
+          let element = document.createElement('li')
+          element.innerText = game.game.name
+          document.querySelector('.navbar__list').appendChild(element);
+        }
+        document.querySelector('h1').innerText = games[0].game.name;
+
+        const request2 = new XMLHttpRequest();
+        request2.open('GET', 'https://api.twitch.tv/kraken/streams?game=' + encodeURIComponent(games[0].game.name), true);
+        request2.setRequestHeader('Client-ID', '4t0oc4ozzmq7a4j3zwrpqjira9nrz1')
+        request2.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
+        request2.onload = function() {
+          if (request2.status >= 200 && request2.status < 400) {
+            const data = JSON.parse(request2.response).streams;
+            console.log(data)
+            for(let stream of data) {
+              let element = document.createElement('div');
+              document.querySelector('.streams').appendChild(element);
+              element.outerHTML = `<div class="stream">
+                <img src="${stream.preview.large}" />
+                <div class="stream__data">
+                  <div class="stream__avatar">
+                    <img src="${stream.channel.logo}" />  
+                  </div>
+                  <div class="stream__intro">
+                    <div class="stream__title">
+                      ${stream.channel.status}
+                    </div>
+                    <div class="stream__channel">
+                      ${stream.channel.name}              
+                    </div>
+                  </div>
+                </div>
+              </div>`
+            }
+          }
+        }
+        request2.send();
+      }
+    }
+    request.send();
+
+    document.querySelector('.navbar__list').addEventListener('click', e => {
+      if (e.target.tagName.toLowerCase() === 'li') {
+        const gameName = e.target.innerText;
+        document.querySelector('h1').innerText = gameName;
+        document.querySelector('.streams').innerHTML = '';
+        const request2 = new XMLHttpRequest();
+        request2.open('GET', 'https://api.twitch.tv/kraken/streams?game=' + encodeURIComponent(gameName), true);
+        request2.setRequestHeader('Client-ID', '4t0oc4ozzmq7a4j3zwrpqjira9nrz1')
+        request2.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
+        request2.onload = function() {
+          if (request2.status >= 200 && request2.status < 400) {
+            const data = JSON.parse(request2.response).streams;
+            console.log(data)
+            for(let stream of data) {
+              let element = document.createElement('div');
+              document.querySelector('.streams').appendChild(element);
+              element.outerHTML = `<div class="stream">
+                <img src="${stream.preview.large}" />
+                <div class="stream__data">
+                  <div class="stream__avatar">
+                    <img src="${stream.channel.logo}" />  
+                  </div>
+                  <div class="stream__intro">
+                    <div class="stream__title">
+                      ${stream.channel.status}
+                    </div>
+                    <div class="stream__channel">
+                      ${stream.channel.name}              
+                    </div>
+                  </div>
+                </div>
+              </div>`
+            }
+          }
+        }
+        request2.send();
+      }
+    })
+ 
+
+  </script>
+</body>
+</html>
