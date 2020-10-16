@@ -4,7 +4,7 @@ VARCHAR:
 MySQL5.0以上的版本中，varchar 實際上可存放 65532 Byte 的數據，有 3 Byte 存長度。  
 當資料長度未達指定長度，將自動向後填補空格
 TEXT: 不需要指定儲存長度，適合用在不知道屬性的最大長度時。 可以存到65535 Byte。
-查詢速度：VARCHAR 比 TEXT 快
+查詢速度：VARCHAR 比 TEXT 快。
 
 
 ## Cookie 是什麼？在 HTTP 這一層要怎麼設定 Cookie，瀏覽器又是怎麼把 Cookie 帶去 Server 的？
